@@ -1,0 +1,2335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Papa Fries × Mexicano | Askari X</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#fff8df;
+    color:#292323;
+}
+
+header{
+    background:#ffc928;
+    padding:35px 20px;
+    text-align:center;
+    border-bottom:6px solid #762129;
+}
+
+.logo{
+    font-size:45px;
+    font-weight:900;
+    color:#762129;
+}
+
+.logo span{
+    color:#fff;
+    background:#a92832;
+    padding:5px 12px;
+    border-radius:12px;
+}
+
+header p{
+    font-weight:bold;
+    font-size:17px;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 20px;
+    border-radius:30px;
+    background:#762129;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    margin:5px;
+}
+
+.btn:hover{
+    background:#a92832;
+}
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:99;
+    background:white;
+    padding:10px;
+    box-shadow:0 3px 15px #0002;
+    overflow-x:auto;
+    white-space:nowrap;
+}
+
+nav a{
+    display:inline-block;
+    text-decoration:none;
+    color:#762129;
+    font-weight:bold;
+    padding:10px 14px;
+    border-radius:20px;
+}
+
+nav a:hover{
+    background:#ffc928;
+}
+
+.container{
+    max-width:1150px;
+    margin:auto;
+    padding:35px 15px 100px;
+}
+
+.section{
+    margin-bottom:60px;
+}
+
+.section h2{
+    font-size:38px;
+    color:#762129;
+    margin-bottom:8px;
+}
+
+.section-intro{
+    color:#716657;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.notice{
+    background:#fff0b7;
+    border:2px solid #e3bd39;
+    padding:15px;
+    border-radius:15px;
+    margin-bottom:20px;
+    font-weight:bold;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 7px 25px #4d300f1c;
+    border:1px solid #eadfbd;
+    display:flex;
+    flex-direction:column;
+}
+
+.food-image{
+    height:190px;
+    margin:12px 12px 0;
+    border:2px dashed #d4c27e;
+    border-radius:15px;
+    background:#fff5cc;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#89794e;
+    font-weight:bold;
+    overflow:hidden;
+}
+
+.food-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:16px;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+.card h3{
+    margin:0 0 7px;
+    color:#762129;
+    font-size:21px;
+}
+
+.card p{
+    color:#716657;
+    font-size:14px;
+    margin:0 0 12px;
+}
+
+.bottom{
+    margin-top:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+}
+
+.price{
+    background:#ffc928;
+    color:#762129;
+    padding:7px 10px;
+    border-radius:10px;
+    font-weight:900;
+}
+
+.add{
+    border:0;
+    background:#762129;
+    color:white;
+    padding:10px 13px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.add:hover{
+    background:#a92832;
+}
+
+.deal-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.deal{
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    border:2px solid #e5cc6c;
+    box-shadow:0 7px 20px #4d300f15;
+}
+
+.deal h3{
+    color:#762129;
+    margin-top:0;
+}
+
+.deal-price{
+    font-size:24px;
+    font-weight:900;
+    color:#762129;
+}
+
+.pizza-section{
+    background:#315d50;
+    padding:25px;
+    border-radius:25px;
+    margin-top:25px;
+}
+
+.pizza-section h3{
+    color:#ffe27a;
+    font-size:28px;
+    margin-top:0;
+}
+
+.pizza-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.pizza{
+    background:#ffffff14;
+    border:1px solid #ffffff33;
+    border-radius:15px;
+    padding:12px;
+    color:white;
+}
+
+.pizza-image{
+    height:120px;
+    border:2px dashed #ffe27a88;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    margin-bottom:10px;
+    overflow:hidden;
+}
+
+.pizza-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.pizza strong{
+    display:block;
+    color:#ffe27a;
+    margin-bottom:5px;
+}
+
+.pizza-buttons{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:5px;
+    margin-top:10px;
+}
+
+.pizza-buttons button{
+    border:0;
+    background:#fff8d9;
+    color:#762129;
+    border-radius:8px;
+    padding:7px 4px;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.contact{
+    background:#762129;
+    color:white;
+    padding:30px;
+    border-radius:25px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.contact h2{
+    color:#ffc928;
+}
+
+.contact p{
+    line-height:1.7;
+}
+
+.contact a{
+    color:#ffe27a;
+}
+
+footer{
+    background:#4c2427;
+    color:#ffeeb1;
+    text-align:center;
+    padding:30px 15px;
+}
+
+
+/* CART */
+
+.cart-button{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:200;
+    border:0;
+    background:#762129;
+    color:white;
+    padding:15px 20px;
+    border-radius:30px;
+    font-weight:900;
+    box-shadow:0 7px 25px #0005;
+}
+
+.cart-count{
+    background:#ffc928;
+    color:#762129;
+    padding:4px 8px;
+    border-radius:50%;
+    margin-left:5px;
+}
+
+.overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:#0008;
+    z-index:250;
+}
+
+.overlay.show{
+    display:block;
+}
+
+.cart{
+    position:fixed;
+    right:0;
+    top:0;
+    width:min(440px,100%);
+    height:100vh;
+    background:#fffdf5;
+    z-index:300;
+    transform:translateX(100%);
+    transition:.3s;
+    display:flex;
+    flex-direction:column;
+}
+
+.cart.open{
+    transform:translateX(0);
+}
+
+.cart-header{
+    background:#762129;
+    color:white;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.cart-header h2{
+    margin:0;
+}
+
+.close{
+    background:none;
+    border:0;
+    color:white;
+    font-size:28px;
+}
+
+.cart-items{
+    flex:1;
+    overflow:auto;
+    padding:15px;
+}
+
+.cart-item{
+    background:white;
+    border:1px solid #eadfbd;
+    border-radius:15px;
+    padding:12px;
+    margin-bottom:10px;
+}
+
+.cart-item-top{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+}
+
+.cart-item strong{
+    color:#762129;
+}
+
+.quantity{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-top:10px;
+}
+
+.quantity button{
+    width:28px;
+    height:28px;
+    border:0;
+    border-radius:7px;
+    background:#fff0b7;
+    color:#762129;
+    font-weight:bold;
+}
+
+.remove{
+    border:0;
+    background:none;
+    color:#a92832;
+    font-weight:bold;
+}
+
+.cart-bottom{
+    padding:20px;
+    border-top:1px solid #eadfbd;
+}
+
+.total{
+    display:flex;
+    justify-content:space-between;
+    font-size:22px;
+    font-weight:900;
+    color:#762129;
+    margin-bottom:15px;
+}
+
+.checkout-button{
+    width:100%;
+    border:0;
+    background:#762129;
+    color:white;
+    padding:15px;
+    border-radius:12px;
+    font-weight:900;
+    font-size:16px;
+}
+
+
+/* CHECKOUT */
+
+.checkout{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:400;
+    background:#0008;
+    padding:20px;
+    overflow:auto;
+}
+
+.checkout.show{
+    display:block;
+}
+
+.checkout-box{
+    max-width:500px;
+    margin:50px auto;
+    background:#fffdf5;
+    border-radius:20px;
+    padding:25px;
+}
+
+.checkout-box h2{
+    color:#762129;
+    margin-top:0;
+}
+
+.field{
+    margin-bottom:15px;
+}
+
+.field label{
+    display:block;
+    color:#762129;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.field input,
+.field textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #d7c98e;
+    border-radius:10px;
+    background:white;
+}
+
+.field textarea{
+    min-height:90px;
+    resize:vertical;
+}
+
+.checkout-actions{
+    display:flex;
+    gap:10px;
+}
+
+.checkout-actions button{
+    flex:1;
+    padding:13px;
+    border-radius:10px;
+    border:0;
+    font-weight:bold;
+}
+
+.cancel{
+    background:#ddd;
+}
+
+.whatsapp{
+    background:#25D366;
+    color:white;
+}
+
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .pizza-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .logo{
+        font-size:34px;
+    }
+
+    .section h2{
+        font-size:30px;
+    }
+
+    .grid,
+    .deal-grid,
+    .pizza-grid,
+    .contact{
+        grid-template-columns:1fr;
+    }
+
+    .food-image{
+        height:180px;
+    }
+
+    .contact{
+        padding:22px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        🍟 PAPA <span>FRIES</span>
+    </div>
+
+    <h1>× MEXICANO</h1>
+
+    <p>
+        Fries • Burgers • Pizza • Deals
+    </p>
+
+    <p>
+        📍 Shop B-4, Main Market, Sector A, Askari X, Lahore Cantt.
+    </p>
+
+    <a class="btn" href="#menu">ORDER NOW</a>
+
+    <a class="btn" href="tel:04235503393">
+        CALL US
+    </a>
+
+</header>
+
+
+<nav>
+
+    <a href="#fries">🍟 Fries</a>
+    <a href="#burgers">🍔 Burgers</a>
+    <a href="#pizza">🍕 Pizza</a>
+    <a href="#deals">🔥 Deals</a>
+    <a href="#contact">📍 Contact</a>
+
+</nav>
+
+
+<main class="container" id="menu">
+
+
+<!-- =====================================================
+     PAPA FRIES
+===================================================== -->
+
+<section class="section" id="fries">
+
+    <h2>🍟 Papa Fries</h2>
+
+    <p class="section-intro">
+        Choose your size, then add your favourite twist or sauce.
+    </p>
+
+    <div class="notice">
+        🌙 Papa Fries menu is also available after 12:00 AM.
+    </div>
+
+
+    <div class="grid">
+
+
+        <!-- CHOTU -->
+
+        <div class="card">
+
+            <div class="food-image">
+
+                <!-- REPLACE WITH YOUR PHOTO -->
+                <img src="YOUR-IMAGE.jpg"
+                     alt="Chotu Fries"
+                     onerror="this.style.display='none';this.parentElement.innerHTML='📸<br>ADD CHOTU FRIES PHOTO';">
+
+            </div>
+
+            <div class="card-content">
+
+                <h3>Chotu Fries</h3>
+
+                <p>
+                    Regular size Papa Fries.
+                </p>
+
+                <div class="bottom">
+
+                    <span class="price">
+                        Rs. 250
+                    </span>
+
+                    <button class="add"
+                        onclick="addItem('Chotu Fries',250)">
+                        + Add
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PAPA -->
+
+        <div class="card">
+
+            <div class="food-image">
+
+                <img src="YOUR-IMAGE.jpg"
+                     alt="Papa Fries"
+                     onerror="this.style.display='none';this.parentElement.innerHTML='📸<br>ADD PAPA FRIES PHOTO';">
+
+            </div>
+
+            <div class="card-content">
+
+                <h3>Papa Fries</h3>
+
+                <p>
+                    Large size Papa Fries.
+                </p>
+
+                <div class="bottom">
+
+                    <span class="price">
+                        Rs. 300
+                    </span>
+
+                    <button class="add"
+                        onclick="addItem('Papa Fries',300)">
+                        + Add
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TAYA -->
+
+        <div class="card">
+
+            <div class="food-image">
+
+                <img src="YOUR-IMAGE.jpg"
+                     alt="Taya Fries"
+                     onerror="this.style.display='none';this.parentElement.innerHTML='📸<br>ADD TAYA FRIES PHOTO';">
+
+            </div>
+
+            <div class="card-content">
+
+                <h3>Taya Fries</h3>
+
+                <p>
+                    Jumbo size Papa Fries.
+                </p>
+
+                <div class="bottom">
+
+                    <span class="price">
+                        Rs. 350
+                    </span>
+
+                    <button class="add"
+                        onclick="addItem('Taya Fries',350)">
+                        + Add
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <h3 style="color:#762129;margin-top:30px;">
+        🔥 Fries Combos
+    </h3>
+
+
+    <div class="grid">
+
+
+        <div class="card">
+
+            <div class="food-image">
+                📸<br>ADD CHOTU COMBO PHOTO
+            </div>
+
+            <div class="card-content">
+
+                <h3>Chotu Main Combo</h3>
+
+                <p>
+                    Chotu fries + special masala + sauce.
+                </p>
+
+                <div class="bottom">
+
+                    <span class="price">
+                        Rs. 350
+                    </span>
+
+                    <button class="add"
+                        onclick="addItem('Chotu Main Combo',350)">
+                        + Add
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="food-image">
+                📸<br>ADD PAPA COMBO PHOTO
+            </div>
+
+            <div class="card-content">
+
+                <h3>Papa Main Combo</h3>
+
+                <p>
+                    Papa fries + special masala + sauce.
+                </p>
+
+                <div class="bottom">
+
+                    <span class="price">
+                        Rs. 400
+                    </span>
+
+                    <button class="add"
+                        onclick="addItem('Papa Main Combo',400)">
+                        + Add
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="food-image">
+                📸<br>ADD TAYA COMBO PHOTO
+            </div>
+
+            <div class="card-content">
+
+                <h3>Taya Main Combo</h3>
+
+                <p>
+                    Taya fries + special masala + sauce.
+                </p>
+
+                <div class="bottom">
+
+                    <span class="price">
+                        Rs. 450
+                    </span>
+
+                    <button class="add"
+                        onclick="addItem('Taya Main Combo',450)">
+                        + Add
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <h3 style="color:#762129;margin-top:30px;">
+        🌶️ Twist Add-ons
+    </h3>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="food-image">📸<br>ADD PHOTO</div>
+            <div class="card-content">
+                <h3>Peri Peri</h3>
+                <p>Peri peri twist.</p>
+                <button class="add"
+                    onclick="addConfirm('Peri Peri')">
+                    + Add
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="food-image">📸<br>ADD PHOTO</div>
+            <div class="card-content">
+                <h3>Premium Twist</h3>
+                <p>Premium fries twist.</p>
+                <button class="add"
+                    onclick="addConfirm('Premium Twist')">
+                    + Add
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="food-image">📸<br>ADD PHOTO</div>
+            <div class="card-content">
+                <h3>Chicken Cheese</h3>
+                <p>Chicken and cheese twist.</p>
+                <button class="add"
+                    onclick="addConfirm('Chicken Cheese')">
+                    + Add
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="food-image">📸<br>ADD PHOTO</div>
+            <div class="card-content">
+                <h3>Butter Cheese</h3>
+                <p>Buttery cheesy twist.</p>
+                <button class="add"
+                    onclick="addConfirm('Butter Cheese')">
+                    + Add
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <h3 style="color:#762129;margin-top:30px;">
+        🥫 Sauce Add-ons
+    </h3>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="food-image">📸<br>ADD SAUCE PHOTO</div>
+            <div class="card-content">
+                <h3>OG Garlic</h3>
+                <button class="add"
+                    onclick="addConfirm('OG Garlic Sauce')">
+                    + Add
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="food-image">📸<br>ADD SAUCE PHOTO</div>
+            <div class="card-content">
+                <h3>Golden Drizzle</h3>
+                <button class="add"
+                    onclick="addConfirm('Golden Drizzle Sauce')">
+                    + Add
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="food-image">📸<br>ADD SAUCE PHOTO</div>
+            <div class="card-content">
+                <h3>Tando Garlic</h3>
+                <button class="add"
+                    onclick="addConfirm('Tando Garlic Sauce')">
+                    + Add
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="notice" style="margin-top:20px;">
+        Additional sauce: + Rs. 50
+    </div>
+
+
+    <div class="grid">
+
+        <div class="card">
+
+            <div class="food-image">
+                📸<br>ADD STUFF FRIES PHOTO
+            </div>
+
+            <div class="card-content">
+
+                <h3>Stuff Fries — Small</h3>
+
+                <p>
+                    Loaded stuffed fries.
+                </p>
+
+                <div class="bottom">
+
+                    <span class="price">
+                        Rs. 500
+                    </span>
+
+                    <button class="add"
+                        onclick="addItem('Stuff Fries Small',500)">
+                        + Add
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="food-image">
+                📸<br>ADD STUFF FRIES PHOTO
+            </div>
+
+            <div class="card-content">
+
+                <h3>Stuff Fries — Large</h3>
+
+                <p>
+                    Large loaded stuffed fries.
+                </p>
+
+                <div class="bottom">
+
+                    <span class="price">
+                        Rs. 600
+                    </span>
+
+                    <button class="add"
+                        onclick="addItem('Stuff Fries Large',600)">
+                        + Add
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MEXICANO DEALS
+===================================================== -->
+
+<section class="section" id="deals">
+
+    <h2>🔥 Mexicano Deals</h2>
+
+    <p class="section-intro">
+        Family meals, burgers and pizza deals.
+    </p>
+
+
+    <div class="deal-grid">
+
+
+        <div class="deal">
+
+            <div class="food-image">
+                📸<br>ADD FAMILY MEAL 1 PHOTO
+            </div>
+
+            <h3>Family Meal 1</h3>
+
+            <p>
+                4 Zinger + 2.5L Drink
+            </p>
+
+            <div class="deal-price">
+                Rs. 1,999
+            </div>
+
+            <button class="add"
+                onclick="addItem('Family Meal 1',1999)">
+                + Add to Order
+            </button>
+
+        </div>
+
+
+        <div class="deal">
+
+            <div class="food-image">
+                📸<br>ADD FAMILY MEAL 2 PHOTO
+            </div>
+
+            <h3>Family Meal 2</h3>
+
+            <p>
+                2 Zinger + 4 Chicken + 1.5L Drink
+            </p>
+
+            <div class="deal-price">
+                Rs. 3,099
+            </div>
+
+            <button class="add"
+                onclick="addItem('Family Meal 2',3099)">
+                + Add to Order
+            </button>
+
+        </div>
+
+
+        <div class="deal">
+
+            <div class="food-image">
+                📸<br>ADD DECO MEAL PHOTO
+            </div>
+
+            <h3>Deco Meal 1</h3>
+
+            <p>
+                2 Zinger + 2 Piece + 0.5L Drink
+            </p>
+
+            <div class="deal-price">
+                Rs. 1,499
+            </div>
+
+            <button class="add"
+                onclick="addItem('Deco Meal 1',1499)">
+                + Add
+            </button>
+
+        </div>
+
+
+        <div class="deal">
+
+            <div class="food-image">
+                📸<br>ADD ZINGER MEAL PHOTO
+            </div>
+
+            <h3>Zinger Meal 2</h3>
+
+            <p>
+                2 Zinger + Fries + 0.5L Drink
+            </p>
+
+            <div class="deal-price">
+                Rs. 1,149
+            </div>
+
+            <button class="add"
+                onclick="addItem('Zinger Meal 2',1149)">
+                + Add
+            </button>
+
+        </div>
+
+
+        <div class="deal">
+
+            <div class="food-image">
+                📸<br>ADD ZINGER MEAL PHOTO
+            </div>
+
+            <h3>Zinger Meal 3</h3>
+
+            <p>
+                Zinger + Fries + Drink
+            </p>
+
+            <div class="deal-price">
+                Rs. 799
+            </div>
+
+            <button class="add"
+                onclick="addItem('Zinger Meal 3',799)">
+                + Add
+            </button>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PIZZA
+===================================================== -->
+
+<section class="section" id="pizza">
+
+    <h2>🍕 Pizza</h2>
+
+    <p class="section-intro">
+        Choose your pizza and size.
+    </p>
+
+
+    <!-- CLUSTER ONE -->
+
+    <div class="pizza-section">
+
+        <h3>Cluster One</h3>
+
+        <div class="pizza-grid">
+
+
+            <div class="pizza">
+
+                <div class="pizza-image">
+                    📸<br>CHICKEN TIKKA PHOTO
+                </div>
+
+                <strong>Chicken Tikka</strong>
+
+                <small>
+                    Chicken tikka, bell pepper, onion, cheese.
+                </small>
+
+                <div class="pizza-buttons">
+
+                    <button onclick="pizza('Chicken Tikka','Small',649)">
+                        Small Rs.649
+                    </button>
+
+                    <button onclick="pizza('Chicken Tikka','Medium',999)">
+                        Medium Rs.999
+                    </button>
+
+                    <button onclick="pizza('Chicken Tikka','Large',1599)">
+                        Large Rs.1599
+                    </button>
+
+                    <button onclick="pizza('Chicken Tikka','XL',2159)">
+                        XL Rs.2159
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="pizza">
+
+                <div class="pizza-image">
+                    📸<br>CHICKEN FAJITA PHOTO
+                </div>
+
+                <strong>Chicken Fajita</strong>
+
+                <small>
+                    Chicken fajita, bell pepper, onion, cheese.
+                </small>
+
+                <div class="pizza-buttons">
+
+                    <button onclick="pizza('Chicken Fajita','Small',649)">Small</button>
+                    <button onclick="pizza('Chicken Fajita','Medium',999)">Medium</button>
+                    <button onclick="pizza('Chicken Fajita','Large',1599)">Large</button>
+                    <button onclick="pizza('Chicken Fajita','XL',2159)">XL</button>
+
+                </div>
+
+            </div>
+
+
+            <div class="pizza">
+
+                <div class="pizza-image">
+                    📸<br>PIZZA JALAPENO PHOTO
+                </div>
+
+                <strong>Pizza Jalapeno</strong>
+
+                <small>
+                    Chicken, jalapeno, onion, cheese.
+                </small>
+
+                <div class="pizza-buttons">
+
+                    <button onclick="pizza('Pizza Jalapeno','Small',649)">Small</button>
+                    <button onclick="pizza('Pizza Jalapeno','Medium',999)">Medium</button>
+                    <button onclick="pizza('Pizza Jalapeno','Large',1599)">Large</button>
+                    <button onclick="pizza('Pizza Jalapeno','XL',2159)">XL</button>
+
+                </div>
+
+            </div>
+
+
+            <div class="pizza">
+
+                <div class="pizza-image">
+                    📸<br>PERI PERI PHOTO
+                </div>
+
+                <strong>Peri Peri</strong>
+
+                <small>
+                    Peri peri chicken, onion, bell pepper, cheese.
+                </small>
+
+                <div class="pizza-buttons">
+
+                    <button onclick="pizza('Peri Peri Pizza','Small',649)">Small</button>
+                    <button onclick="pizza('Peri Peri Pizza','Medium',999)">Medium</button>
+                    <button onclick="pizza('Peri Peri Pizza','Large',1599)">Large</button>
+                    <button onclick="pizza('Peri Peri Pizza','XL',2159)">XL</button>
+
+                </div>
+
+            </div>
+
+
+            <div class="pizza">
+
+                <div class="pizza-image">
+                    📸<br>CHICKEN SAUSAGE PHOTO
+                </div>
+
+                <strong>Chicken Sausage Lover</strong>
+
+                <small>
+                    Chicken sausage, onion, cheese.
+                </small>
+
+                <div class="pizza-buttons">
+
+                    <button onclick="pizza('Chicken Sausage Lover','Small',649)">Small</button>
+                    <button onclick="pizza('Chicken Sausage Lover','Medium',999)">Medium</button>
+                    <button onclick="pizza('Chicken Sausage Lover','Large',1599)">Large</button>
+                    <button onclick="pizza('Chicken Sausage Lover','XL',2159)">XL</button>
+
+                </div>
+
+            </div>
+
+
+            <div class="pizza">
+
+                <div class="pizza-image">
+                    📸<br>BEEF DELIGHT PHOTO
+                </div>
+
+                <strong>Beef Delight</strong>
+
+                <small>
+                    Beef, mushrooms, onion, cheese.
+                </small>
+
+                <div class="pizza-buttons">
+
+                    <button onclick="pizza('Beef Delight','Small',649)">Small</button>
+                    <button onclick="pizza('Beef Delight','Medium',999)">Medium</button>
+                    <button onclick="pizza('Beef Delight','Large',1599)">Large</button>
+                    <button onclick="pizza('Beef Delight','XL',2159)">XL</button>
+
+                </div>
+
+            </div>
+
+
+            <div class="pizza">
+
+                <div class="pizza-image">
+                    📸<br>CHEESE LOVER PHOTO
+                </div>
+
+                <strong>Cheese Lover</strong>
+
+                <small>
+                    Special cheese sauce, mozzarella and cheese.
+                </small>
+
+                <div class="pizza-buttons">
+
+                    <button onclick="pizza('Cheese Lover','Small',649)">Small</button>
+                    <button onclick="pizza('Cheese Lover','Medium',999)">Medium</button>
+                    <button onclick="pizza('Cheese Lover','Large',1599)">Large</button>
+                    <button onclick="pizza('Cheese Lover','XL',2159)">XL</button>
+
+                </div>
+
+            </div>
+
+
+            <div class="pizza">
+
+                <div class="pizza-image">
+                    📸<br>VEGGIE DELIGHT PHOTO
+                </div>
+
+                <strong>Veggie Delight</strong>
+
+                <small>
+                    Mushroom, onion, sweet corn, bell pepper, olives.
+                </small>
+
+                <div class="pizza-buttons">
+
+                    <button onclick="pizza('Veggie Delight','Small',649)">Small</button>
+                    <button onclick="pizza('Veggie Delight','Medium',999)">Medium</button>
+                    <button onclick="pizza('Veggie Delight','Large',1599)">Large</button>
+                    <button onclick="pizza('Veggie Delight','XL',2159)">XL</button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- CLUSTER TWO -->
+
+    <div class="pizza-section">
+
+        <h3>Cluster Two</h3>
+
+        <div class="pizza-grid">
+
+
+            <div class="pizza">
+
+                <div class="pizza-image">
+                    📸<br>LASAGNE PIZZA PHOTO
+                </div>
+
+                <strong>Lasagne Pizza</strong>
+
+                <small>
+                    Chicken tikka, jalapeno, onion, cheese.
+                </small>
+
+                <div class="pizza-buttons">
+
+                    <button onclick="pizza('Lasagne Pizza','Small',759)">Small</button>
+                    <button onclick="pizza('Lasagne Pizza','Medium',1299)">Medium</button>
+                    <button onclick="pizza('Lasagne Pizza','Large',1799)">Large</button>
+                    <button onclick="pizza('Lasagne Pizza','XL',2299)">XL</button>
+
+                </div>
+
+            </div>
+
+
+            <div class="pizza">
+
+                <div class="pizza-image">
+                    📸<br>CHICKEN SUPREME PHOTO
+                </div>
+
+                <strong>Chicken Supreme</strong>
+
+                <small>
+                    Chicken tikka, bell pepper, onion, cheese.
+                </small>
+
+                <div class="pizza-buttons">
+
+                    <button onclick="pizza('Chicken Supreme','Small',759)">Small</button>
+                    <button onclick="pizza('Chicken Supreme','Medium',1299)">Medium</button>
+                    <button onclick="pizza('Chicken Supreme','Large',1799)">Large</button>
+                    <button onclick="pizza('Chicken Supreme','XL',2299)">XL</button>
+
+                </div>
+
+            </div>
+
+
+            <div class="pizza">
+
+                <div class="pizza-image">
+                    📸<br>BBQ PIZZA PHOTO
+                </div>
+
+                <strong>BBQ Pizza</strong>
+
+                <small>
+                    BBQ chicken with cheese and vegetables.
+                </small>
+
+                <div class="pizza-buttons">
+
+                    <button onclick="pizza('BBQ Pizza','Small',759)">Small</button>
+                    <button onclick="pizza('BBQ Pizza','Medium',1299)">Medium</button>
+                    <button onclick="pizza('BBQ Pizza','Large',1799)">Large</button>
+                    <button onclick="pizza('BBQ Pizza','XL',2299)">XL</button>
+
+                </div>
+
+            </div>
+
+
+            <div class="pizza">
+
+                <div class="pizza-image">
+                    📸<br>ALFREDO PHOTO
+                </div>
+
+                <strong>Alfredo</strong>
+
+                <small>
+                    Alfredo sauce, chicken, garlic, cheese.
+                </small>
+
+                <div class="pizza-buttons">
+
+                    <button onclick="pizza('Alfredo Pizza','Small',759)">Small</button>
+                    <button onclick="pizza('Alfredo Pizza','Medium',1299)">Medium</button>
+                    <button onclick="pizza('Alfredo Pizza','Large',1799)">Large</button>
+                    <button onclick="pizza('Alfredo Pizza','XL',2299)">XL</button>
+
+                </div>
+
+            </div>
+
+
+            <div class="pizza">
+
+                <div class="pizza-image">
+                    📸<br>PEPPERONI PHOTO
+                </div>
+
+                <strong>Pepperoni</strong>
+
+                <small>
+                    Pepperoni, cheese and tomato sauce.
+                </small>
+
+                <div class="pizza-buttons">
+
+                    <button onclick="pizza('Pepperoni Pizza','Small',759)">Small</button>
+                    <button onclick="pizza('Pepperoni Pizza','Medium',1299)">Medium</button>
+                    <button onclick="pizza('Pepperoni Pizza','Large',1799)">Large</button>
+                    <button onclick="pizza('Pepperoni Pizza','XL',2299)">XL</button>
+
+                </div>
+
+            </div>
+
+
+            <div class="pizza">
+
+                <div class="pizza-image">
+                    📸<br>MEXICANO SPECIAL PHOTO
+                </div>
+
+                <strong>Mexicano Special</strong>
+
+                <small>
+                    Mexican special pizza with chicken, onion,
+                    jalapeno, olives, mushrooms, bell pepper and cheese.
+                </small>
+
+                <div class="pizza-buttons">
+
+                    <button onclick="pizza('Mexicano Special','Small',759)">Small</button>
+                    <button onclick="pizza('Mexicano Special','Medium',1299)">Medium</button>
+                    <button onclick="pizza('Mexicano Special','Large',1799)">Large</button>
+                    <button onclick="pizza('Mexicano Special','XL',2299)">XL</button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- TWO PIZZA DEALS -->
+
+    <div class="grid" style="margin-top:20px;">
+
+        <div class="card">
+
+            <div class="food-image">
+                📸<br>ADD 2 PIZZA DEAL PHOTO
+            </div>
+
+            <div class="card-content">
+
+                <h3>Cluster One — 2 Pizzas</h3>
+
+                <p>
+                    Small: Rs. 1,099<br>
+                    Medium: Rs. 1,999<br>
+                    Large: Rs. 2,699<br>
+                    Extra Large: Rs. 3,599
+                </p>
+
+                <button class="add"
+                    onclick="addItem('Cluster One — 2 Pizza Deal',1099)">
+                    Add Small — Rs.1,099
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="food-image">
+                📸<br>ADD 2 PIZZA DEAL PHOTO
+            </div>
+
+            <div class="card-content">
+
+                <h3>Cluster Two — 2 Pizzas</h3>
+
+                <p>
+                    Small: Rs. 1,299<br>
+                    Medium: Rs. 2,199<br>
+                    Large: Rs. 2,999<br>
+                    Extra Large: Rs. 3,849
+                </p>
+
+                <button class="add"
+                    onclick="addItem('Cluster Two — 2 Pizza Deal',1299)">
+                    Add Small — Rs.1,299
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="section" id="contact">
+
+    <div class="contact">
+
+        <div>
+
+            <h2>📍 Find Us</h2>
+
+            <p>
+                <strong>Papa Fries × Mexicano</strong><br><br>
+
+                Shop B-4, Main Market<br>
+                Sector A, Askari X<br>
+                Lahore Cantt.
+            </p>
+
+            <p>
+                🚚 Free delivery in Askari 10 only.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h2>📞 Contact</h2>
+
+            <p>
+                <a href="tel:04235503393">
+                    042-35503393
+                </a>
+            </p>
+
+            <p>
+                <a href="tel:04236500057">
+                    042-36500057
+                </a>
+            </p>
+
+            <p>
+                <a href="tel:03094494463">
+                    0309-4494463
+                </a>
+            </p>
+
+            <p>
+                <a href="tel:03065993901">
+                    0306-5993901
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <strong>Papa Fries × Mexicano</strong>
+
+    <br><br>
+
+    Shop B-4 • Main Market • Sector A • Askari X • Lahore Cantt.
+
+    <br><br>
+
+    © 2026 Papa Fries × Mexicano
+
+</footer>
+
+
+<!-- =====================================================
+     FLOATING CART
+===================================================== -->
+
+<button class="cart-button" onclick="openCart()">
+
+    🛒 Cart
+
+    <span class="cart-count" id="cartCount">
+        0
+    </span>
+
+</button>
+
+
+<div class="overlay"
+     id="overlay"
+     onclick="closeCart()">
+</div>
+
+
+<!-- =====================================================
+     CART PANEL
+===================================================== -->
+
+<aside class="cart" id="cart">
+
+    <div class="cart-header">
+
+        <h2>🛒 Your Order</h2>
+
+        <button class="close"
+                onclick="closeCart()">
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="cart-items"
+         id="cartItems">
+
+        <p style="text-align:center;color:#777;">
+            Your cart is empty.
+        </p>
+
+    </div>
+
+
+    <div class="cart-bottom">
+
+        <div class="total">
+
+            <span>Total</span>
+
+            <span id="total">
+                Rs. 0
+            </span>
+
+        </div>
+
+
+        <button class="checkout-button"
+                onclick="checkout()">
+
+            Continue to Checkout →
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =====================================================
+     CHECKOUT
+===================================================== -->
+
+<div class="checkout"
+     id="checkoutBox">
+
+    <div class="checkout-box">
+
+        <h2>📦 Checkout</h2>
+
+        <p>
+            Enter your details and we'll prepare
+            your order for WhatsApp.
+        </p>
+
+
+        <div class="field">
+
+            <label>
+                Name
+            </label>
+
+            <input
+                id="customerName"
+                type="text"
+                placeholder="Your name">
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Phone
+            </label>
+
+            <input
+                id="customerPhone"
+                type="tel"
+                placeholder="03XX-XXXXXXX">
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Delivery Address
+            </label>
+
+            <textarea
+                id="customerAddress"
+                placeholder="Your complete address"></textarea>
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Order Notes
+            </label>
+
+            <textarea
+                id="customerNotes"
+                placeholder="Any special instructions?"></textarea>
+
+        </div>
+
+
+        <div class="checkout-actions">
+
+            <button class="cancel"
+                    onclick="closeCheckout()">
+
+                Cancel
+
+            </button>
+
+
+            <button class="whatsapp"
+                    onclick="sendOrder()">
+
+                📲 WhatsApp Order
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   SHOPPING CART
+===================================================== */
+
+let cart = [];
+
+
+/* ADD NORMAL ITEM */
+
+function addItem(name,price){
+
+    let existing = cart.find(
+        item => item.name === name
+    );
+
+    if(existing){
+
+        existing.qty++;
+
+    }else{
+
+        cart.push({
+            name:name,
+            price:price,
+            qty:1
+        });
+
+    }
+
+    updateCart();
+
+    openCart();
+
+}
+
+
+/* ITEMS WHOSE PRICE NEEDS CONFIRMATION */
+
+function addConfirm(name){
+
+    cart.push({
+
+        name:name + " — price to confirm",
+
+        price:0,
+
+        qty:1
+
+    });
+
+    updateCart();
+
+    openCart();
+
+}
+
+
+/* PIZZA */
+
+function pizza(name,size,price){
+
+    addItem(
+        name + " — " + size,
+        price
+    );
+
+}
+
+
+/* INCREASE */
+
+function increase(index){
+
+    cart[index].qty++;
+
+    updateCart();
+
+}
+
+
+/* DECREASE */
+
+function decrease(index){
+
+    cart[index].qty--;
+
+    if(cart[index].qty <= 0){
+
+        cart.splice(index,1);
+
+    }
+
+    updateCart();
+
+}
+
+
+/* REMOVE */
+
+function removeItem(index){
+
+    cart.splice(index,1);
+
+    updateCart();
+
+}
+
+
+/* TOTAL */
+
+function getTotal(){
+
+    return cart.reduce(
+        (total,item) =>
+        total + item.price * item.qty,
+        0
+    );
+
+}
+
+
+/* UPDATE CART */
+
+function updateCart(){
+
+    const container =
+        document.getElementById("cartItems");
+
+    const count =
+        document.getElementById("cartCount");
+
+    const total =
+        document.getElementById("total");
+
+
+    let itemCount =
+        cart.reduce(
+            (sum,item) =>
+            sum + item.qty,
+            0
+        );
+
+
+    count.innerText = itemCount;
+
+
+    total.innerText =
+        "Rs. " +
+        getTotal().toLocaleString();
+
+
+    if(cart.length === 0){
+
+        container.innerHTML = `
+            <p style="text-align:center;color:#777;">
+                Your cart is empty.
+            </p>
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML = cart.map(
+        (item,index) => `
+
+        <div class="cart-item">
+
+            <div class="cart-item-top">
+
+                <strong>
+                    ${item.name}
+                </strong>
+
+                <strong>
+
+                    ${
+                        item.price === 0
+
+                        ? "Confirm"
+
+                        : "Rs. " +
+                          (
+                            item.price *
+                            item.qty
+                          ).toLocaleString()
+
+                    }
+
+                </strong>
+
+            </div>
+
+
+            <div class="quantity">
+
+                <button
+                    onclick="decrease(${index})">
+                    −
+                </button>
+
+                <strong>
+                    ${item.qty}
+                </strong>
+
+                <button
+                    onclick="increase(${index})">
+                    +
+                </button>
+
+                <button
+                    class="remove"
+                    onclick="removeItem(${index})">
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        </div>
+
+        `
+    ).join("");
+
+}
+
+
+/* OPEN CART */
+
+function openCart(){
+
+    document
+        .getElementById("cart")
+        .classList.add("open");
+
+    document
+        .getElementById("overlay")
+        .classList.add("show");
+
+}
+
+
+/* CLOSE CART */
+
+function closeCart(){
+
+    document
+        .getElementById("cart")
+        .classList.remove("open");
+
+    document
+        .getElementById("overlay")
+        .classList.remove("show");
+
+}
+
+
+/* CHECKOUT */
+
+function checkout(){
+
+    if(cart.length === 0){
+
+        alert(
+            "Your cart is empty!"
+        );
+
+        return;
+
+    }
+
+    document
+        .getElementById("checkoutBox")
+        .classList.add("show");
+
+}
+
+
+/* CLOSE CHECKOUT */
+
+function closeCheckout(){
+
+    document
+        .getElementById("checkoutBox")
+        .classList.remove("show");
+
+}
+
+
+/* =====================================================
+   WHATSAPP ORDER
+===================================================== */
+
+function sendOrder(){
+
+    const name =
+        document
+        .getElementById("customerName")
+        .value
+        .trim();
+
+
+    const phone =
+        document
+        .getElementById("customerPhone")
+        .value
+        .trim();
+
+
+    const address =
+        document
+        .getElementById("customerAddress")
+        .value
+        .trim();
+
+
+    const notes =
+        document
+        .getElementById("customerNotes")
+        .value
+        .trim();
+
+
+    if(!name || !phone || !address){
+
+        alert(
+            "Please enter your name, phone and address."
+        );
+
+        return;
+
+    }
+
+
+    let message =
+        "🍟 NEW ORDER — PAPA FRIES × MEXICANO\n\n";
+
+
+    message +=
+        "Customer: " +
+        name +
+        "\n";
+
+
+    message +=
+        "Phone: " +
+        phone +
+        "\n";
+
+
+    message +=
+        "Address: " +
+        address +
+        "\n\n";
+
+
+    message +=
+        "ORDER:\n";
+
+
+    cart.forEach(item => {
+
+        message +=
+            "• " +
+            item.name +
+            " × " +
+            item.qty;
+
+
+        if(item.price > 0){
+
+            message +=
+                " — Rs. " +
+                (
+                    item.price *
+                    item.qty
+                ).toLocaleString();
+
+        }else{
+
+            message +=
+                " — price to confirm";
+
+        }
+
+
+        message += "\n";
+
+    });
+
+
+    message +=
+        "\nTOTAL: Rs. " +
+        getTotal().toLocaleString();
+
+
+    if(notes){
+
+        message +=
+            "\n\nNotes: " +
+            notes;
+
+    }
+
+
+    /*
+       0309-4494463
+       Converted to international format:
+       923094494463
+    */
+
+    const whatsappNumber =
+        "923094494463";
+
+
+    const whatsappURL =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+}
+
+
+/* START */
+
+updateCart();
+
+</script>
+
+</body>
+</html>
